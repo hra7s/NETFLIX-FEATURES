@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
-import { checkValidate } from "../utils/validate";
+import { checkValidData } from "../utils/validate.js";
 
 const Login = () => {
   const [isSignInForm,setIsSignInForm]= useState(true);
@@ -8,17 +8,18 @@ const Login = () => {
 
   const email= useRef(null)
   const password=useRef(null)
-  const fname=useRef(null)
+  // const fname=useRef(null)
 
   const handleButtonClick=()=>{
- //e.preventDefault()
+// e.preventDefault()
     //we will validate the form data
-     console.log(email.current.value)
+    console.log(email.current.value)
     console.log(password.current.value)
-    console.log(fname.current.value)
-    //const message=checkValidate(email.current.value,password.current.value,fname.current.value)
-    //setErrorMessage(message)
-    //console.log(message)
+  
+  //const message=(!isSignInForm)?checkValidData(email.current.value,password.current.value):checkValidData(email.current.value,password.current.value,fname.current.value)
+  const message=checkValidData(email.current.value,password.current.value)
+  setErrorMessage(message)
+  // console.log(message)
     
   }
 
@@ -38,7 +39,7 @@ setIsSignInForm(!isSignInForm);
         <h1 className="font-bold text-3xl py-4">{ isSignInForm?"Sign In": "Sign Up"}</h1>
         {
           !isSignInForm &&  <input
-           ref={fname}
+        
           type="text"
          
           placeholder="Full Name"
