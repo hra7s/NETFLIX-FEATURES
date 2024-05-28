@@ -10,15 +10,15 @@ const Login = () => {
   const password=useRef(null)
   const fname=useRef(null)
 
-  const handleButtonClick=(e)=>{
-// e.preventDefault()
+  const handleButtonClick=()=>{
+ //e.preventDefault()
     //we will validate the form data
-    // console.log(email.current.value)
-    // console.log(password.current.value)
-    // console.log(fname.current.value)
-    const message=checkValidate(email.current.value,password.current.value,fname.current.value)
-    setErrorMessage(message)
-    console.log(message)
+     console.log(email.current.value)
+    console.log(password.current.value)
+    console.log(fname.current.value)
+    //const message=checkValidate(email.current.value,password.current.value,fname.current.value)
+    //setErrorMessage(message)
+    //console.log(message)
     
   }
 
