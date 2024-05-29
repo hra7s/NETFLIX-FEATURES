@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import Header from "./Header";
+import Header from "./Header.js";
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { checkValidData } from "../utils/validate.js";
 import {auth} from "../utils/firebase.js"
